@@ -1,8 +1,8 @@
 package com.pruebaTecnica.lugares.controller;
 
 
-import com.pruebaTecnica.lugares.model.Persona;
-import com.pruebaTecnica.lugares.service.PersonaService;
+import com.pruebaTecnica.lugares.model.Person;
+import com.pruebaTecnica.lugares.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,18 +15,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-public class PersonaController {
+public class PersonController {
 
     @Autowired
-    private PersonaService personaService;
+    private PersonService personaService;
 
-    @GetMapping("/persona")
-    public ResponseEntity<List<Persona>> getAll() {
+    @GetMapping("/person")
+    public ResponseEntity<List<Person>> getAll() {
         return personaService.findAll();
     }
 
-    @PostMapping("/persona")
-    public ResponseEntity<Persona> createPerson(@RequestBody Persona persona) {
-        return personaService.save(persona);
+    @PostMapping("/person")
+    public ResponseEntity<Person> createPerson(@RequestBody Person person) {
+        return personaService.save(person);
     }
 }

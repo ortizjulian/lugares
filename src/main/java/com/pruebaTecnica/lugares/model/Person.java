@@ -6,21 +6,20 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "persona")
-public class Persona {
+public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_persona")
-    private Long idPersona;
+    private Long personId;
 
     @Column(name = "nombre")
-    private String nombre;
+    private String name ;
 
     @Column(name = "edad")
-    private Integer edad;
+    private Integer age;
 
     @Column(name = "ocupacion")
-    private String ocupacion;
+    private String occupation;
 
-    // Constructor, getters y setters
 }

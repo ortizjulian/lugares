@@ -5,24 +5,25 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "lugar")
-public class Lugar {
+
+public class Place {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_lugar")
-    private Long idLugar;
+    private Long placeId;
 
     @Column(name = "nombre")
-    private String nombre;
+    private String name;
 
     @Column(name = "departamento")
-    private String departamento;
+    private String department;
 
     @Column(name = "pais")
-    private String pais;
+    private String country;
 
     @ManyToOne
     @JoinColumn(name = "persona_id_persona")
-    private Persona persona;
+    private Person person;
 
 }
