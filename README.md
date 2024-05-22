@@ -15,10 +15,10 @@ Asegúrate de tener instalados los siguientes elementos en tu sistema:
 
 ## Estructura de carpetas
 
-Repositorio: Contiene la interacción con la base de datos, en este caso por medio de JPA.
-Servicio: Contiene la lógica de la app, ejemplo: Las validaciones.
-Controlador: Contiene los métodos que manejan las solicitudes HTTP entrantes (Endpoints).
-Modelo: Contiene las clases que representan las entidades de la base de datos.
+- Repositorio: Contiene la interacción con la base de datos, en este caso por medio de JPA.
+- Servicio: Contiene la lógica de la app, ejemplo: Las validaciones.
+- Controlador: Contiene los métodos que manejan las solicitudes HTTP entrantes (Endpoints).
+- Modelo: Contiene las clases que representan las entidades de la base de datos.
 
 ## Modelo entidad relación
 
