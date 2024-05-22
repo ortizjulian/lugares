@@ -36,13 +36,22 @@ public class LugarService {
             Lugar savedLugar = lugarRepository.save(lugar);
             return ResponseEntity.ok(savedLugar);
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 
     public ResponseEntity<List<Lugar>> getAllLugaresXPersona(Long personaId) {
-        List<Lugar> lugares = lugarRepository.findByPersonaIdPersona(personaId);
-        return ResponseEntity.ok(lugares);
+
+        Optional<Persona> personaOptional = personaRepository.findById(personaId);
+
+        if (personaOptional.isPresent()) {
+            List<Lugar> lugares = lugarRepository.findByPersonaIdPersona(personaId);
+            return ResponseEntity.ok(lugares);
+        } else {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
+
     }
 }
 
