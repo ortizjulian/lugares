@@ -50,8 +50,11 @@ public class PlaceService {
         } else {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
+    }
 
-
+    public ResponseEntity<List<Place>> getPlacesInCountry(String country) {
+        List<Place> places = placeRepository.findByCountry(country);
+        return ResponseEntity.ok(places);
     }
 }
 

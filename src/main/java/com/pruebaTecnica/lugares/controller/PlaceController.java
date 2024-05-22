@@ -32,6 +32,11 @@ public class PlaceController {
     public ResponseEntity<Person> getPersonVisitedPlace(@PathVariable Long placeId) {
         return lugarService.getPersonVisitedPlace(placeId);
     }
+    @GetMapping("/place/country")
+    public ResponseEntity<List<Place>> getPlacesInCountry(@RequestParam String country) {
+        return lugarService.getPlacesInCountry(country);
+    }
+
 
 }
 
