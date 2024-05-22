@@ -1,6 +1,7 @@
 package com.pruebaTecnica.lugares.controller;
 
 import com.pruebaTecnica.lugares.model.Lugar;
+import com.pruebaTecnica.lugares.model.Persona;
 import com.pruebaTecnica.lugares.service.LugarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,20 +17,20 @@ public class LugarController {
     private LugarService lugarService;
 
     @GetMapping("/lugar")
-    public ResponseEntity<List<Lugar>> getAllLugares() {
+    public ResponseEntity<List<Lugar>> getAllPlaces() {
 
         return lugarService.findAll();
     }
 
     @PostMapping("/lugar")
-    public ResponseEntity<Lugar> createLugar(@RequestBody Lugar lugar) {
+    public ResponseEntity<Lugar> createPlace(@RequestBody Lugar lugar) {
 
         return lugarService.save(lugar);
     }
 
-    @GetMapping("/lugar/{personaId}")
-    public ResponseEntity<List<Lugar>> getAllLugaresXPersona(@PathVariable Long personaId) {
-        return lugarService.getAllLugaresXPersona(personaId);
+    @GetMapping("/lugar/{lugarId}")
+    public ResponseEntity<Persona> getPersonVisitedPlace(@PathVariable Long lugarId) {
+        return lugarService.getPersonVisitedPlace(lugarId);
     }
 }
 

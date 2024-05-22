@@ -15,14 +15,14 @@ public class PersonaService {
     private PersonaRepository personaRepository;
 
     public ResponseEntity<List<Persona>> findAll() {
-        List<Persona> personas = personaRepository.findAll();
-        return ResponseEntity.ok(personas);
+        List<Persona> people = personaRepository.findAll();
+        return ResponseEntity.ok(people);
     }
 
 
     public ResponseEntity<Persona> save(Persona persona) {
-        Persona personaCreada = personaRepository.save(persona);
-        return ResponseEntity.ok(personaCreada);
+        Persona createdPerson = personaRepository.save(persona);
+        return ResponseEntity.ok(createdPerson);
     }
 }
 

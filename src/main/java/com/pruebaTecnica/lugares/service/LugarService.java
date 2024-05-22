@@ -40,13 +40,13 @@ public class LugarService {
         }
     }
 
-    public ResponseEntity<List<Lugar>> getAllLugaresXPersona(Long personaId) {
+    public ResponseEntity<Persona> getPersonVisitedPlace(Long lugarId) {
 
-        Optional<Persona> personaOptional = personaRepository.findById(personaId);
+        Optional<Lugar> lugarOptional = lugarRepository.findById(lugarId);
 
-        if (personaOptional.isPresent()) {
-            List<Lugar> lugares = lugarRepository.findByPersonaIdPersona(personaId);
-            return ResponseEntity.ok(lugares);
+        if (lugarOptional.isPresent()) {
+            Persona persona = lugarOptional.get().getPersona();
+            return ResponseEntity.ok(persona);
         } else {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }

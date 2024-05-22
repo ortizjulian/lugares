@@ -21,12 +21,12 @@ public class PersonaController {
     private PersonaService personaService;
 
     @GetMapping("/persona")
-    public ResponseEntity<List<Persona>> getAllPersonas() {
+    public ResponseEntity<List<Persona>> getAll() {
         return personaService.findAll();
     }
 
     @PostMapping("/persona")
-    public ResponseEntity<Persona> createPersona(@RequestBody Persona persona) {
+    public ResponseEntity<Persona> createPerson(@RequestBody Persona persona) {
         return personaService.save(persona);
     }
 }
