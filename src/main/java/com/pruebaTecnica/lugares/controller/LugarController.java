@@ -26,5 +26,10 @@ public class LugarController {
 
         return lugarService.save(lugar);
     }
+
+    @GetMapping("/lugar/{personaId}")
+    public ResponseEntity<List<Lugar>> getAllLugaresXPersona(@PathVariable Long personaId) {
+        return lugarService.getAllLugaresXPersona(personaId);
+    }
 }
 

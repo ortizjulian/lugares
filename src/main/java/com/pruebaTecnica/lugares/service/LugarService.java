@@ -39,5 +39,10 @@ public class LugarService {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
+    public ResponseEntity<List<Lugar>> getAllLugaresXPersona(Long personaId) {
+        List<Lugar> lugares = lugarRepository.findByPersonaIdPersona(personaId);
+        return ResponseEntity.ok(lugares);
+    }
 }
 
