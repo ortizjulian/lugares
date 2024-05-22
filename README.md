@@ -28,16 +28,16 @@ CREATE USER backend_user WITH PASSWORD 'talentoB';
 
 CREATE TABLE Persona (
     id_persona SERIAL PRIMARY KEY,
-    nombre VARCHAR(100),
+    nombre VARCHAR(25),
     edad INTEGER,
-    ocupacion VARCHAR(100)
+    ocupacion VARCHAR(25)
 );
 
 CREATE TABLE Lugar (
     id_lugar SERIAL PRIMARY KEY,
-    nombre VARCHAR(100),
-    departamento VARCHAR(100),
-    pais VARCHAR(100),
+    nombre VARCHAR(25),
+    departamento VARCHAR(25),
+    pais VARCHAR(25),
     persona_id_persona INTEGER,
     FOREIGN KEY (persona_id_persona) REFERENCES Persona(id_persona)
 );
